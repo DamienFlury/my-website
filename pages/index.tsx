@@ -1,65 +1,55 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+
+type ChoiceCardProps = {
+  title: string;
+  body: string;
+  buttonText: string;
+};
+
+const ChoiceCard: React.FC<ChoiceCardProps> = ({ title, body, buttonText }) => (
+  <div className="shadow-lg p-4 m-4 rounded bg-white w-64">
+    <h3 className="text-4xl">{title}</h3>
+    <p>{body}</p>
+    <button
+      className="py-2 px-4 rounded text-white mt-4 w-full"
+      style={{ background: "#0099ff" }}
+    >
+      {buttonText}
+    </button>
+  </div>
+);
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <div>
+      <div className="bg-primary flex items-center justify-center h-64">
+        <h1 className="text-6xl text-white">Hey there!</h1>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 319"
+        className="bg-primary"
+      >
+        <path
+          fill="#0099ff"
+          fillOpacity="1"
+          d="M0,128L80,160C160,192,320,256,480,234.7C640,213,800,107,960,96C1120,85,1280,171,1360,213.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+        ></path>
+      </svg>
+      <div className="flex" style={{ background: "#0099ff" }}>
+        <div className="container bg-white rounded my-4 mx-auto p-4 shadow">
+          <h2 className="text-4xl">Skills</h2>
+          <div className="flex">
+            <img className="w-32 m-4" src="/react-logo.png" alt="React" />
+            <img className="w-32 m-4" src="/angular-logo.png" alt="Angular" />
+            <img
+              className="w-32 m-4"
+              src="/net-core-logo.png"
+              alt=".NET Core"
+            />
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
